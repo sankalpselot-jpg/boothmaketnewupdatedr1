@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ticker animation — used by ShowsTicker component */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.bm-ticker {
+  animation: ticker 40s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-cream text-[#1A1A1A];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold hover:bg-gold-light text-white font-medium px-5 py-2.5 rounded transition-colors duration-150 cursor-pointer;
+  }
+  .btn-outline {
+    @apply border-[1.5px] border-navy text-navy hover:bg-navy hover:text-white font-medium px-5 py-2.5 rounded transition-colors duration-150 cursor-pointer;
+  }
+  .btn-ghost {
+    @apply text-navy hover:bg-cream-dark px-4 py-2 rounded transition-colors duration-150;
+  }
+  .card {
+    @apply bg-white border border-[#DDD8CF] rounded-lg;
+  }
+  .input {
+    @apply w-full border-[1.5px] border-[#DDD8CF] rounded bg-cream px-3 py-2.5 text-sm outline-none focus:border-navy transition-colors font-sans;
+  }
+  .label {
+    @apply block text-sm font-medium text-[#1A1A1A] mb-1.5;
+  }
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.12em] uppercase text-gold mb-2.5 block;
+  }
+  .section-title {
+    @apply font-display text-3xl font-extrabold text-navy tracking-tight;
+  }
+  .tag-eu      { @apply bg-blue-50 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .tag-uk      { @apply bg-red-50 text-red-700 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .tag-in      { @apply bg-orange-50 text-orange-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .tag-all     { @apply bg-gray-100 text-gray-700 text-xs font-medium px-2 py-0.5 rounded-full; }
+
+  .comp-tag-blue    { @apply bg-blue-50 text-blue-800 text-[11px] px-2.5 py-1 rounded-full font-medium; }
+  .comp-tag-red     { @apply bg-red-50 text-red-700 text-[11px] px-2.5 py-1 rounded-full font-medium; }
+  .comp-tag-saffron { @apply bg-orange-50 text-orange-800 text-[11px] px-2.5 py-1 rounded-full font-medium; }
+  .comp-tag-green   { @apply bg-green-50 text-green-800 text-[11px] px-2.5 py-1 rounded-full font-medium; }
+}
